@@ -6,13 +6,17 @@ b->2 #left to right object
 
 d="bacon" # created character object
 typeof(x) # reveals the type of object "x" is
-b= 20 # created numeric object
+b=as.numeric(20) # created numeric object
+typeof(b) # type of "b"=double"
+class(b) # reveals thr data type of "b"= "numeric"
 c= as.integer (12) #created integer object
 c
 typeof(c) # reveals the type of data "c" is
 letters=as.factor(c('a','b','c','d')) #created factor data type (with 4 levels)
+
+typeof(letters) # revelas the data type of the factor "letters"
 b%/%c # integer division of b/c or 20/12, which is 1.66 so it cuts it off to 1 without the remainder
-b%%c # took the modulus of b/c or 20/12.
+b%%c # took the modulus of b/c or 20/12, and the modulus is what is left over=8.
 s=1:10 # created object with sequence of 10 numbers
 
 rm(x)
@@ -81,3 +85,4 @@ fish$area_fac=as.character(fish$area_fac) #change "area_fac" to character data t
 str(fish)
 fish$avg.DNE.m=NULL # remove the "avg.DNE.m" column from the data frame.
 str(fish)
+
