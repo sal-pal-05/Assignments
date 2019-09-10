@@ -31,6 +31,8 @@ f
 length(f)=5 # assigned the length of "f" to be 5, even though there are only 4 values, therefore when I run "f" it displays NA for the 5th value.
 f
 
+q <-7
+q <- NULL
 
 5^1527 # value is too large for R, therefore it displays as "Inf" or(positive) infinity
 -5^1527# value is too large for R, therefore it displays as "-Inf" or ( negative) infinity because it is -5 being raised to the power of 1527.
