@@ -34,6 +34,10 @@ f
 q <-7
 q <- NULL
 
+w=4
+w=NULL
+
+
 5^1527 # value is too large for R, therefore it displays as "Inf" or(positive) infinity
 -5^1527# value is too large for R, therefore it displays as "-Inf" or ( negative) infinity because it is -5 being raised to the power of 1527.
 
@@ -82,7 +86,7 @@ str(fish)
 nrow(fish) # find the number of rows in the dataset= 2026 rows
 ncol(fish) #find the number of columns in the dataset=23
 class(fish $year) # reveals the data type of the "years" column in the data set= "character"
-str(fish) # 5 data types present= factor data, characters, numbers, integers, 
+str(fish) # 5 data types present= factor data, characters, numbers, integers,POSIXct 
 fish$area_fac=as.character(fish$area_fac) #change "area_fac" to character data type, from factor data.
 str(fish)
 fish$avg.DNE.m=NULL # remove the "avg.DNE.m" column from the data frame.
