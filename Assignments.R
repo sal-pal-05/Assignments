@@ -92,3 +92,126 @@ str(fish)
 fish$avg.DNE.m=NULL # remove the "avg.DNE.m" column from the data frame.
 str(fish)
 
+
+#class 9/11/2019 time zones and indexing
+load(file="fish_data.Rdata")
+str(fish)
+head(fish)
+fish.e=fish[fish$area_fac=="East",]
+unique(fish.e$area_fac)
+e.lat=fish[fish$area_fac=="East",] $parcel.start.lat
+dim(e.lat)
+e.lat=fish[fish$area_fac=="East",] $parcel.start.lat[6]
+e.lat[6]
+str(e.lat)
+e.lat=fish[fish$area_fac=="East"& fish$depth_fac=="Shallow",] 
+unique(fish.e$depth_fac)
+fish_not_east=fish[fish$area_fac!="East"& fish$depth_fac!= "Shallow",]
+unique(fish_not_east)
+
+fish_lg_patch=fish[fish$parcel.length.m >= 20,]
+summary(fish$parcel.length.m)
+
+summary(fish_lg_patch$parcel.length.m)
+
+fish_sm_patch=fish[fish$parcel.length.m <= 20,]
+summary(fish_sm_patch$parcel.length.m)
+
+v=c(1,1,2,0,3,2,0,1) # reated vector"v"
+v
+2%in%v #"in" is the number to the left present in v?
+1<2 # R can do basic true false logic
+1> c(0,1,2)  # R will unfoil each option individually, and tell you if each one is true  or false
+
+
+c(1,2,3)==c(3,2,1) # still does each one and checks with corresponding one
+
+c(1,2,3) %in% c(3,2,1) # are the numbers in the first character string preset in the 2nd one
+
+#replacing Values
+
+
+v # we want to remove the 0, which is in the 4th position
+v[4]=5 # replaces the 0 in the 4th position to 5
+v
+v[c(1,3,5)]=c(1,1,1)
+v
+v[c(1,3,5)]
+v
+v[c(1,3,5)]= c(7,9,13) # replace the numbers in positions 1,3,5 (of vector v)with the numbers 7, 9 and 13
+
+gc() # garbage collection- cleans up workspace
+
+# how to find missing data or NAs
+n=(c(NA,1:50)) #NA in the sequence
+mean(n) # gonna give you NA as outpu bc blank value is present in sequence 1:50
+mean(n, na.rm=T) # remove the NAs
+n.a=n[which(is.na(n)),]
+n.a
+
+head(fish)
+
+names(fish) #gives names of all columns
+
+unique(fish$year)
+fish$year[6]=NA # replaced the 6th value in "year" with NA
+head(fish$year)
+
+fish.no.na=fish[!is.na(fish$year),] # give me all the values from fish.na that do not have an NA
+  
+  unique(fish.no.na$year) # show me the values in fish, under the column "year" that have no NA
+  
+  
+  #packages
+  
+  install.packages("data.table")
+install.packages(c("tidyverse","stringr","plyr","reshape2","grid","gridExtra","pastecs","lubridate"))  
+packs=c("tidyverse","stringr","plyr","reshape2","grid","gridExtra","pastecs","lubridate")
+n=length(packs)
+
+  for(i in 1:n){
+    install.packages(packs[n])  # for loops, tells the computer to download each of the packages in the set"packs"we set the order of packages in the set "packs" earlier
+  }
+packs[1]  #pull out the first package in te set of packages "packs"
+ packs[5] #pull out the 6th package in te set of packages "packs"
+ 
+ packs 
+  
+  install.packages("devtools")
+yes  
+library(devtools)  
+install_github("displayr/flipPlots")  
+
+
+#updating packages  
+  
+ update.packages(c("tidyverse","stringr","plyr","reshape2","grid","gridExtra","pastecs","lubridate")) 
+1  
+
+#Time Objects
+
+getwd()
+
+file=list.files(full.names=TRUE, pattern="ISIIS201405291242.txt")
+
+d= read.table(file, sep="\t",skip=10, header=TRUE, fileEncoding="ISO-8859-1", stringsAsFactors=FALSE, quote="\"",check.names=FALSE, encoding="UTF-8",na.strings="9999.99")
+date=scan(file,what="character", skip=1, nlines=1, quiet=TRUE)
+date=date[2]
+date
+library(stringr)
+date
+mm=str_sub(string=date, start=1,end=2)
+mm
+yy=str_sub(date, 7, 8)
+yy  
+y=str_sub(date, -2, -1)
+yy
+
+dd=str_sub(date, 4, 5)
+dd
+head(d$Time) # time is also seen as a character string.
+
+
+
+
+
