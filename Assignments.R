@@ -92,3 +92,5 @@ str(fish)
 fish$avg.DNE.m=NULL # remove the "avg.DNE.m" column from the data frame.
 str(fish)
 
+
+test=1
